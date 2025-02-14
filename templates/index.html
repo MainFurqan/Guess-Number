@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #542b44;
+        }
+        .container {
+            text-align: center;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%; /* Adjusts to 90% of screen width */
+            max-width: 400px; /* Maximum width for larger screens */
+            margin: 20px; /* Prevents overlap on very small screens */
+        }
+        input[type="number"] {
+            width: 90%; /* Full width of the container */
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0b0d10;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0b0d15;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #542b44;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Number Guessing Game</h1>
+        <h5>Guess between 1 to 1000</h5>
+        <form method="POST">
+            <input type="number" name="guess" placeholder="Enter your guess" required>
+            <button type="submit">Submit Guess</button>
+        </form>
+        {% if message %}
+        <div class="message">{{ message }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
